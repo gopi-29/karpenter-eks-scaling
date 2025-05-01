@@ -42,7 +42,8 @@ Deploy the necessary CloudFormation stack and create the EKS cluster.
 1. Download the CloudFormation template and deploy it:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/aws/karpenter-provider-aws/v"${KARPENTER_VERSION}"/website/content/en/preview/getting-started/getting-started-with-karpenter/cloudformation.yaml > "${TEMPOUT}"
+cp karpenter-prerequisite.yaml "${TEMPOUT}"
+
 aws cloudformation deploy \
   --stack-name "Karpenter-${CLUSTER_NAME}" \
   --template-file "${TEMPOUT}" \
